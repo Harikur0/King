@@ -1,6 +1,6 @@
 /* untuk navigator bar */
 
- nav {
+nav {
     background-color: rgb(192, 190, 211);
     margin: 0.2vw;
     padding: 1vw;
@@ -79,7 +79,7 @@ a:hover {
 
 /* untuk isi-teks dan Judul-isi*/
 
-.isi-teks {
+/*.isi-teks {
     font-size: clamp(8px,1vw,14px);
     padding-left: 0.5em;
     border-radius: 1px;
@@ -145,7 +145,7 @@ background-color: rgba(220, 238, 242);
     padding: 10px;
     border: 2px solid;
     color:  #9da4e8;
-}
+}*/
 
 
 /* untuk Untuk teks semua H1 dan H2*/
@@ -187,4 +187,74 @@ body {
     to {background-position: -1000px 5000px;}
 }
 
+/* Contoh saja */
 
+/* Biar bisa scroll (override punyamu yang overflow: hidden) */
+body { overflow: auto; }
+
+/* --- Keep Board --- */
+.keep-wrapper {
+  max-width: 1200px;
+  margin: 2vw auto;
+  padding: 1vw;
+  border-radius: 12px;
+  backdrop-filter: blur(2px);
+  position: relative;
+  z-index: 1; /* di atas .stars */
+}
+.keep-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+  gap: 1rem;
+}
+.keep-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+.note {
+  background: rgba(255,255,255,.85);
+  border: 2px solid rgba(0,0,0,.15);
+  border-radius: 12px;
+  padding: .75rem;
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+}
+.note:hover { box-shadow: 0 10px 22px rgba(0,0,0,.16); }
+.note-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: .25rem;
+  margin-bottom: .25rem;
+}
+.note-btn {
+  background: transparent; border: none; font-size: 1.1rem;
+  cursor: pointer; opacity: .65;
+}
+.note-btn:hover { opacity: 1; }
+.note-title { font-weight: 700; margin: .25rem 0 .5rem; outline: none; }
+.note-content { min-height: 6rem; white-space: pre-wrap; outline: none; }
+
+/* Placeholder untuk contenteditable */
+[contenteditable][data-placeholder]:empty:before {
+  content: attr(data-placeholder);
+  color: #666;
+  pointer-events: none;
+}
+
+/* Tombol tambah */
+.btn {
+  padding: .5rem .8rem;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background: #88f700;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn:hover { filter: brightness(0.95); }
+
+/* Pastikan bintang di bawah konten (jika pakai) */
+.stars { z-index: 0; }
+.main-content { position: relative; z-index: 1; }
