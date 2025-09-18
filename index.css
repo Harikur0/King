@@ -80,7 +80,6 @@ a:hover {
 /* untuk isi-teks dan Judul-isi*/
 
 .isi-teks {
-    background-color:antiquewhite;
     font-size: clamp(8px,1vw,14px);
     padding-left: 0.5em;
     border-radius: 1px;
@@ -187,4 +186,5 @@ body {
     from {background-position: 0 0;}
     to {background-position: -1000px 5000px;}
 }
+
 
