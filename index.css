@@ -66,16 +66,18 @@ a:hover {
 /* untuk Judul-kalimat*/
 
 .Judul-kalimat {
-    background-color:red;
+    background-color:rgb(140, 131, 219);
     margin-top: 3vw;
     font-size: clamp(12px,3vw,10px);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     padding-left:0.2em;
     border-radius: 1vw;
     border: 0.2vw solid;
+    text-align: center;
+    color: aliceblue;
 }
 
-/* untuk isi-teks*/
+/* untuk isi-teks dan Judul-isi*/
 
 .isi-teks {
     background-color:antiquewhite;
@@ -83,8 +85,70 @@ a:hover {
     padding-left: 0.5em;
     border-radius: 1px;
     border: 0.1vw solid;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
     
 }
+
+.Judul-kiri {
+    color: black;
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+.Judul-tengah {
+    color: black;
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+.Judul-kanan {
+    color: black;
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+.container-kiri { 
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container-tengah {
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+.container-kanan {
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.kiri {
+background-color: rgba(220, 238, 242);
+    padding: 10px;
+    border:2px solid;
+    color:  #9da4e8;
+}
+
+.tengah {
+    background-color: rgba(180,222,234);
+    padding: 10px;
+    border: 2px solid;
+    color:  #9da4e8;
+}
+
+.kanan {
+    background-color: rgba(142, 200, 220);
+    padding: 10px;
+    border: 2px solid;
+    color:  #9da4e8;
+}
+
+
 /* untuk Untuk teks semua H1 dan H2*/
 h1, h2 {
     margin: 0;
@@ -93,10 +157,33 @@ h1, h2 {
 
 /* Latar gambar di website*/
 
-body {  background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-        url(latar2.jpg)no-repeat center center fixed;
+/*body {  background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+        url(latar2.jpg) no-repeat center center fixed;
         background-size: contain;
         background-color: rgb(2, 2, 2);
+}*/
+
+/* Body latar */
+
+body {
+    margin:0;
+    height:100vh;
+    background:linear-gradient(to bottom, #7c8ed5, #9da4e8, #fdbb2d);
+    background-attachment: fixed;
+    overflow: hidden;
+    font-family: arial, sans-serif;
 }
 
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+    animation: twinkling 50s linear infinite;
+    z-index: -1;
+}
 
+@keyframes twinkling {
+    from {background-position: 0 0;}
+    to {background-position: -1000px 5000px;}
+}
