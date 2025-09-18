@@ -84,7 +84,7 @@ a:hover {
     font-size: clamp(8px,1vw,14px);
     padding-left: 0.5em;
     border-radius: 1px;
-    border: 0.1vw solid;
+    border: 0px solid;
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
     
@@ -187,3 +187,4 @@ body {
     from {background-position: 0 0;}
     to {background-position: -1000px 5000px;}
 }
+
