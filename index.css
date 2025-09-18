@@ -149,10 +149,10 @@ background-color: rgba(220, 238, 242);
 
 
 /* untuk Untuk teks semua H1 dan H2*/
-h1, h2 {
+/*h1, h2 {
     margin: 0;
     padding: 0;
-}
+}*/
 
 /* Latar gambar di website*/
 
@@ -258,3 +258,4 @@ body { overflow: auto; }
 /* Pastikan bintang di bawah konten (jika pakai) */
 .stars { z-index: 0; }
 .main-content { position: relative; z-index: 1; }
+
