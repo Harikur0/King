@@ -4,7 +4,7 @@
         <h1 class="Judul-atas">Bebas untuk semua masalah, silakan pilih dan bicarakan lebih jauh.</h1>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="Stylesheet" href="index.css"/>
+        <link rel="Stylesheet" href="cadangan.css"/>
         <title>
             Imajinasi Itu Bebas
         </title>
@@ -24,23 +24,66 @@
         <div class="stars"></div>
         <h1>
             <p class="Judul-kalimat">Untuk proses ku dan Harapan ku.</p>
-    </h1>
-       <h2 class="isi-teks">
-        <div class="kiri">
-            <p class="Judul-kiri">Curahan Hati </p>
-            <p class="container-kiri">
-                &nbsp; Hari berlalu tanpa ada masalah sama sekali, menganggap bahwa duni itu tanp noda
-                </p>
+        </h1>
+    <section class="keep-wrapper main-content">
+        <div class="keep-header">
+            <button id="addNoteBtn" class="btn">+ Catatan Baru</button>
+             <small>Semua perubahan tersimpan otomatis</small>
         </div>
-        <div class="tengah">
-            <p class="Judul-tengah">Judul</p>
-            <p class="container-tengah">Contoh</p>
-        </div>
-        <div class="kanan">
-            <p class="Judul-kanan">Judul</p>
-            <p class="container-kanan"> Contoh </p>
-        </div>
-       </h2>
-    </body>
-</html>
 
+        <div id="keepBoard" class="keep-board"></div>
+    </section>
+
+       <script>
+        const board = document.getElementById('keepBoard');
+        const addBtn = document.getElementById('addNoteBtn');
+      
+        const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+      
+        const throttle = (fn, ms=400) => {
+          let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
+        };
+      
+        function saveAll() {
+          const notes = [...board.querySelectorAll('.note')].map(card => ({
+            id: card.dataset.id,
+            title: card.querySelector('.note-title').innerText,
+            content: card.querySelector('.note-content').innerText
+          }));
+          localStorage.setItem('keepNotes', JSON.stringify(notes));
+        }
+        const saveAllThrottled = throttle(saveAll, 400);
+      
+        function createNote(data = {}) {
+          const id = data.id || uid();
+          const el = document.createElement('div');
+          el.className = 'note';
+          el.dataset.id = id;
+          el.innerHTML = `
+            <div class="note-toolbar">
+              <button class="note-btn del" title="Hapus">&times;</button>
+            </div>
+            <div class="note-title" contenteditable="true" data-placeholder="Judul"></div>
+            <div class="note-content" contenteditable="true" data-placeholder="Tulis sesuatu…"></div>
+          `;
+          el.querySelector('.note-title').innerText = data.title || '';
+          el.querySelector('.note-content').innerText = data.content || '';
+          el.addEventListener('input', saveAllThrottled);
+          el.querySelector('.del').addEventListener('click', () => { el.remove(); saveAll(); });
+          board.prepend(el);
+          return el;
+        }
+      
+        function loadAll() {
+          const raw = localStorage.getItem('keepNotes');
+          if (raw) { JSON.parse(raw).forEach(n => createNote(n)); }
+          else { for (let i = 0; i < 3; i++) createNote(); }
+        }
+      
+        addBtn.addEventListener('click', () => { createNote(); saveAll(); });
+      
+        loadAll();
+      </script>      
+    </body>
+    
+</html>
