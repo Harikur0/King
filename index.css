@@ -1,14 +1,13 @@
 /* untuk navigator bar */
 
 nav {
-    background-color: rgb(192, 190, 211);
-    margin: 0.2vw;
+    background-color: #3656d6;
+    margin: 0vw;
     padding: 1vw;
     position:sticky ;
-    top:0;
+    top: 1px;
     z-index: 10;
-    border: 0.3vw solid;
-    border-radius: 1vw;
+    border-radius: ;
 }
 
 ul {
@@ -19,27 +18,19 @@ ul {
     justify-content:center;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 0.5vw;
+    gap: 1vw;
     width: 100%;
     box-sizing: border-box;
 }
 
-li {
-    text-align: center;
-    background-color: rgb(136, 247, 0);
-    border: 0.3vw solid rgb(0, 0, 0);
-    border-radius: 1vw;
-}
-
-a {
-    display: inline-block;                    /* cukup selebar teks */
-    padding: clamp(6px, 1vw, 14px);
-    font-size: clamp(12px, 2vw, 22px);
+a {      /* cukup selebar teks */
+    padding: clamp(2px, 2vw, 150px);
+    font-size: clamp(2px, 2vw, 19px);
     text-decoration: none; 
     white-space: nowrap;
-    color: rgb(14,100,71);
+    color: rgb(255, 255, 255);
     font-weight: bold;
-    font-family: 'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
 a:hover {
@@ -49,15 +40,15 @@ a:hover {
 /* untuk Judul-atas */
 
 .Judul-atas {
-    background-color: blue;
+    background-color:0;
     margin: 2vw;
     padding: 1vw;
-    border-radius: 20% 50% / 90%;
+    border-radius: 50% 100% / 20%;
     font-size:clamp(12px,2vw,22px);
+    font-family:Georgia, 'Times New Roman', Times, serif;
     text-align: center;
     font-style:normal ;
-    color:aqua;
-    border:0.2vw solid;
+    color:green;
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 0.5vw;
@@ -68,15 +59,17 @@ a:hover {
 .Judul-kalimat {
     background-color:rgb(140, 131, 219);
     margin-top: 3vw;
+    padding: 5px;
     font-size: clamp(12px,3vw,10px);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     padding-left:0.2em;
-    border-radius: 1vw;
-    border: 0.2vw solid;
+    border-radius: 0.5vw;
+    border: 0.5px solid;
     text-align: center;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
 }
 
+:root 
 /* untuk isi-teks dan Judul-isi*/
 
 /*.isi-teks {
@@ -149,10 +142,10 @@ background-color: rgba(220, 238, 242);
 
 
 /* untuk Untuk teks semua H1 dan H2*/
-/*h1, h2 {
+h1, h2 {
     margin: 0;
     padding: 0;
-}*/
+}
 
 /* Latar gambar di website*/
 
@@ -258,4 +251,3 @@ body { overflow: auto; }
 /* Pastikan bintang di bawah konten (jika pakai) */
 .stars { z-index: 0; }
 .main-content { position: relative; z-index: 1; }
-
