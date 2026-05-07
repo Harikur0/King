@@ -34,8 +34,8 @@ a {      /* cukup selebar teks */
   }
 
 a:hover {
-    color:rgb(177, 120, 39);
-    transition : 0.3s;
+    color: rgb(177, 120, 39);
+    transition: 0.3s;
 }
 
 /* untuk Judul-atas */
